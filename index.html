@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision 360° - Portail d'Architecture d'Entreprise</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--dark-color);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        
+        .navbar-brand span {
+            color: var(--secondary-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .card-domain {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            height: 100%;
+        }
+        
+        .card-domain:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card-domain .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            padding: 1.5rem;
+            border-bottom: none;
+        }
+        
+        .domain-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        .process-diagram {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .api-card {
+            border-left: 4px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .api-card:hover {
+            border-left: 4px solid var(--accent-color);
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+        
+        .badge-rh { background-color: #e74c3c; }
+        .badge-finance { background-color: #2ecc71; }
+        .badge-logistique { background-color: #f39c12; }
+        .badge-marketing { background-color: #9b59b6; }
+        .badge-gmao { background-color: #1abc9c; }
+        .badge-achats { background-color: #3498db; }
+        .badge-si { background-color: #34495e; }
+        .badge-juridique { background-color: #7f8c8d; }
+        .badge-direction { background-color: #d35400; }
+        .badge-innovation { background-color: #27ae60; }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--secondary-color);
+        }
+        
+        .tab-content {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .tool-card {
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .tool-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+        
+        .practice-card {
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .good-practice {
+            border-left: 4px solid #2ecc71;
+            background-color: rgba(46, 204, 113, 0.1);
+        }
+        
+        .bad-practice {
+            border-left: 4px solid #e74c3c;
+            background-color: rgba(231, 76, 60, 0.1);
+        }
+        
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 999;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        /* Animation classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Vision <span>360°</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#domaines">Domaines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#modelisation">Modélisation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#apis">APIs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pratiques">Pratiques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#outils">Outils</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="hero-title animate__animated animate__fadeInDown">Portail d'Architecture d'Entreprise</h1>
+            <p class="hero-subtitle animate__animated animate__fadeIn animate__delay-1s">Une vision unifiée et 360° de votre écosystème métier et technique</p>
+            <div class="animate__animated animate__fadeIn animate__delay-2s">
+                <a href="#domaines" class="btn btn-light btn-lg me-2">Explorer les domaines</a>
+                <a href="#contact" class="btn btn-outline-light btn-lg">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Domaines Section -->
+    <section id="domaines" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Domaines Fonctionnels</h2>
+            <p class="lead mb-5 animate-on-scroll">Découvrez les 10 domaines clés de l'entreprise avec leurs processus, acteurs et outils associés.</p>
+            
+            <div class="row">
+                <!-- RH -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                    <div class="card card-domain">
+                        <div class="card-header d-flex align-items-center">
+                            <i class="fas fa-users me-3 domain-icon"></i>
+                            <div>
+                                <h5 class="mb-0">Ressources Humaines</h5>
+                                <small class="text-white-50">Recrutement, formation, paie</small>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="text-muted">Processus clés:</h6>
+                            <ul>
+                                <li>Recrutement</li>
+                                <li>Onboarding</li>
+                                <li>Gestion des carrières</li>
+                                <li>Paie</li>
+                            </ul>
+                            <h6 class="text-muted mt-3">Outils:</h6>
+                            <div class="d-flex flex-wrap">
+                                <span class="badge bg-secondary me-2 mb-2">OrangeHRM</span>
+                                <span class="badge bg-secondary me-2 mb-2">SAGE Paie</span>
+                                <span class="badge bg-secondary me-2 mb-2">Odoo RH</span>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#rhModal">Voir détail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Finance -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                    <div class="card card-domain">
+                        <div class="card-header d-flex align-items-center">
+                            <i class="fas fa-euro-sign me-3 domain-icon"></i>
+                            <div>
+                                <h5 class="mb-0">Finance & Comptabilité</h5>
+                                <small class="text-white-50">Flux comptables, fiscalité, audit</small>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="text-muted">Processus clés:</h6>
+                            <ul>
+                                <li>Saisie comptable</li>
+                                <li>Déclaration TVA</li>
+                                <li>Audit interne</li>
+                                <li>Clôture annuelle</li>
+                            </ul>
+                            <h6 class="text-muted mt-3">Outils:</h6>
+                            <div class="d-flex flex-wrap">
+                                <span class="badge bg-secondary me-2 mb-2">Dolibarr</span>
+                                <span class="badge bg-secondary me-2 mb-2">QuickBooks</span>
+                                <span class="badge bg-secondary me-2 mb-2">SAP FI</span>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#financeModal">Voir détail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Logistique -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                    <div class="card card-domain">
+                        <div class="card-header d-flex align-items-center">
+                            <i class="fas fa-truck me-3 domain-icon"></i>
+                            <div>
+                                <h5 class="mb-0">Logistique & Patrimoine</h5>
+                                <small class="text-white-50">Stocks, entrepôts, biens matériels</small>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="text-muted">Processus clés:</h6>
+                            <ul>
+                                <li>Gestion des stocks</li>
+                                <li>Inventaire</li>
+                                <li>Transport</li>
+                                <li>Affectation patrimoine</li>
+                            </ul>
+                            <h6 class="text-muted mt-3">Outils:</h6>
+                            <div class="d-flex flex-wrap">
+                                <span class="badge bg-secondary me-2 mb-2">ERPNext</span>
+                                <span class="badge bg-secondary me-2 mb-2">Odoo Logistique</span>
+                                <span class="badge bg-secondary me-2 mb-2">AssetTiger</span>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#logistiqueModal">Voir détail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketing -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                    <div class="card card-domain">
+                        <div class="card-header d-flex align-items-center">
+                            <i class="fas fa-bullhorn me-3 domain-icon"></i>
+                            <div>
+                                <h5 class="mb-0">Marketing & Vente</h5>
+                                <small class="text-white-50">Expérience client, fidélisation</small>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="text-muted">Processus clés:</h6>
+                            <ul>
+                                <li>Campagnes marketing</li>
+                                <li>Prospection</li>
+                                <li>Vente</li>
+                                <li>Service client</li>
+                            </ul>
+                            <h6 class="text-muted mt-3">Outils:</h6>
+                            <div class="d-flex flex-wrap">
+                                <span class="badge bg-secondary me-2 mb-2">SuiteCRM</span>
+                                <span class="badge bg-secondary me-2 mb-2">HubSpot</span>
+                                <span class="badge bg-secondary me-2 mb-2">Mautic</span>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#marketingModal">Voir détail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GMAO -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                    <div class="card card-domain">
+                        <div class="card-header d-flex align-items-center">
+                            <i class="fas fa-tools me-3 domain-icon"></i>
+                            <div>
+                                <h5 class="mb-0">GMAO</h5>
+                                <small class="text-white-50">Maintenance assistée</small>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="text-muted">Processus clés:</h6>
+                            <ul>
+                                <li>Planification</li>
+                                <li>Intervention</li>
+                                <li>Maintenance préventive</li>
+                                <li>Maintenance corrective</li>
+                            </ul>
+                            <h6 class="text-muted mt-3">Outils:</h6>
+                            <div class="d-flex flex-wrap">
+                                <span class="badge bg-secondary me-2 mb-2">OpenMAINT</span>
+                                <span class="badge bg-secondary me-2 mb-2">CARL Source</span>
+                                <span class="badge bg-secondary me-2 mb-2">Infor EAM</span>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#gmaoModal">Voir détail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Achats -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll">
+                    <div class="card card-domain">
+                        <div class="card-header d-flex align-items-center">
+                            <i class="fas fa-shopping-cart me-3 domain-icon"></i>
+                            <div>
+                                <h5 class="mb-0">Achats & Approvisionnements</h5>
+                                <small class="text-white-50">Cycle fournisseur, commande</small>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="text-muted">Processus clés:</h6>
+                            <ul>
+                                <li>Demande d'achat</li>
+                                <li>Commande</li>
+                                <li>Réception</li>
+                                <li>Facturation</li>
+                            </ul>
+                            <h6 class="text-muted mt-3">Outils:</h6>
+                            <div class="d-flex flex-wrap">
+                                <span class="badge bg-secondary me-2 mb-2">ERPNext</span>
+                                <span class="badge bg-secondary me-2 mb-2">Odoo Achat</span>
+                                <span class="badge bg-secondary me-2 mb-2">Openbravo</span>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#achatsModal">Voir détail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4 animate-on-scroll">
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#allDomainsModal">Voir tous les domaines</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modélisation Section -->
+    <section id="modelisation" class="py-5">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Modélisation Métier</h2>
+            <p class="lead mb-5 animate-on-scroll">Diagrammes et modèles pour représenter les processus et données de l'entreprise.</p>
+            
+            <div class="row animate-on-scroll">
+                <div class="col-lg-6">
+                    <div class="process-diagram">
+                        <h4><i class="fas fa-project-diagram me-2"></i> Processus de Recrutement (BPMN)</h4>
+                        <hr>
+                        <div class="text-center my-4">
+                            <img src="https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW0RlbWFuZGUgZGUgUmVjcnV0ZW1lbnRdIC0tPiBCW1ZhbGlkYXRpb24gUlNdXG4gICAgQiAtLT4gQ1tEaWZmdXNpb24gb2ZmcmVdXG4gICAgQyAtLT4gRFtDYW5kaWRhdHVyZSByZcO1ZV1cbiAgICBEIC0tPiBFPVvDqXR1ZGUgZGUgY2FuZGlkYXR1cmVdXG4gICAgRSAtLT4gRltDb252b2NhdGlvbl1cbiAgICBGIC0tPiBHW0VudHJldGllbiBSSF1cbiAgICBHIC0tPiBIW1ZhbGlkYXRpb24gT2ZmcmVdXG4gICAgSCAtLT4gSVtDcsOpYXRpb24gQ29udHJhdF1cbiAgICBJIC0tPiBKW09uYm9hcmRpbmcgRGlnaXRhbF1cbiAgICBFIC0tIHJlamV0IC0tPiBLW1JlamV0XSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9" alt="Processus de recrutement BPMN" class="img-fluid rounded">
+                        </div>
+                        <p class="text-muted">Outils recommandés: Camunda Modeler, Signavio, Bonita Studio</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="process-diagram">
+                        <h4><i class="fas fa-database me-2"></i> Modèle Conceptuel de Données (RH)</h4>
+                        <hr>
+                        <div class="text-center my-4">
+                            <img src="https://mermaid.ink/img/eyJjb2RlIjoiZXJEaWFncmFtXG4gICAgRW1wbG95ZSB7XG4gICAgICAgIGludCBpZFxuICAgICAgICBzdHJpbmcgbm9tXG4gICAgICAgIGRhdGUgZGF0ZV9uYWlzc2FuY2VcbiAgICAgICAgc3RyaW5nIGVtYWlsXG4gICAgICAgIHN0cmluZyBtYXRyaWN1bGVcbiAgICB9XG4gICAgXG4gICAgQ29udHJhdCB7XG4gICAgICAgIGludCBpZFxuICAgICAgICBzdHJpbmcgdHlwZVxuICAgICAgICBkYXRlIGRhdGVfZGVidXRcbiAgICAgICAgZmxvYXQgc2FsYWlyZVxuICAgICAgICBzdHJpbmcgc3RhdHV0XG4gICAgfVxuICAgIFxuICAgIFBvc3RlIHtcbiAgICAgICAgaW50IGlkXG4gICAgICAgIHN0cmluZyB0aXRyZVxuICAgICAgICBzdHJpbmcgZGVwYXJ0ZW1lbnRcbiAgICAgICAgc3RyaW5nIG5pdmVhdVxuICAgIH1cbiAgICBcbiAgICBEZXBhcnRlbWVudCB7XG4gICAgICAgIGludCBpZFxuICAgICAgICBzdHJpbmcgbm9tXG4gICAgICAgIHN0cmluZyBtYW5hZ2VyXG4gICAgfVxuICAgIFxuICAgIEVudHJldGllbiB7XG4gICAgICAgIGludCBpZFxuICAgICAgICBkYXRlIGRhdGVfZW50cmV0aWVuXG4gICAgICAgIHN0cmluZyB0eXBlXG4gICAgICAgIHN0cmluZyBjb21tZW50YWlyZVxuICAgIH1cbiAgICBcbiAgICBFbXBsb3llIHx8LS1veyBDb250cmF0IDogYVxuICAgIEVtcGxveWUgfHwtLW97IFBvc3RlIDogb2NjdXBlXG4gICAgUG9zdGUgfHwtLW97IERlcGFydGVtZW50IDogYXBwYXJ0aWVudFxcbkRlcGFydGVtZW50IHx8LS1veyBFbnRyZXRpZW4gOiBjb25jZXJuZSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9" alt="MCD RH" class="img-fluid rounded">
+                        </div>
+                        <p class="text-muted">Outils recommandés: DB-Main, Modelio, PgModeler</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APIs Section -->
+    <section id="apis" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">APIs & Règles de Gestion</h2>
+            <p class="lead mb-5 animate-on-scroll">Référentiel des APIs et règles métier formalisées.</p>
+            
+            <div class="row animate-on-scroll">
+                <div class="col-lg-6">
+                    <h4><i class="fas fa-code me-2"></i> Catalogue des APIs</h4>
+                    <div class="card api-card mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title">/api/employes</h5>
+                                <span class="badge badge-rh">RH</span>
+                            </div>
+                            <h6 class="card-subtitle mb-2 text-muted">Gestion des employés</h6>
+                            <div class="mb-2">
+                                <span class="badge bg-primary me-1">GET</span>
+                                <span class="badge bg-success me-1">POST</span>
+                                <span class="badge bg-warning text-dark me-1">PUT</span>
+                            </div>
+                            <p class="card-text">Authentification: JWT</p>
+                            <p class="card-text">Exposé via: WSO2 API Manager</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Documentation OpenAPI</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card api-card mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title">/api/factures</h5>
+                                <span class="badge badge-finance">Finance</span>
+                            </div>
+                            <h6 class="card-subtitle mb-2 text-muted">Gestion des factures</h6>
+                            <div class="mb-2">
+                                <span class="badge bg-primary me-1">GET</span>
+                                <span class="badge bg-warning text-dark me-1">PATCH</span>
+                            </div>
+                            <p class="card-text">Authentification: OAuth2</p>
+                            <p class="card-text">Exposé via: Gravitee.io</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Documentation OpenAPI</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card api-card mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title">/api/stocks</h5>
+                                <span class="badge badge-logistique">Logistique</span>
+                            </div>
+                            <h6 class="card-subtitle mb-2 text-muted">Gestion des stocks</h6>
+                            <div class="mb-2">
+                                <span class="badge bg-primary me-1">GET</span>
+                                <span class="badge bg-danger me-1">DELETE</span>
+                            </div>
+                            <p class="card-text">Authentification: API Key</p>
+                            <p class="card-text">Exposé via: Kong</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Documentation OpenAPI</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h4><i class="fas fa-gavel me-2"></i> Règles de Gestion</h4>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            Ressources Humaines
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <span><strong>RG001</strong>: Un employé ne peut pas avoir deux contrats actifs simultanément</span>
+                                    <span class="badge bg-success">Active</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <span><strong>RG002</strong>: Tout nouvel employé doit suivre un onboarding dans les 15 jours</span>
+                                    <span class="badge bg-success">Active</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header bg-success text-white">
+                            Finance
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <span><strong>RG048</strong>: Une facture ne peut être modifiée après validation comptable</span>
+                                    <span class="badge bg-success">Active</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <span><strong>RG049</strong>: Toute écriture doit être approuvée par deux personnes distinctes</span>
+                                    <span class="badge bg-success">Active</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header bg-warning text-dark">
+                            Logistique
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <span><strong>RG101</strong>: Application de la méthode FIFO pour la gestion des stocks</span>
+                                    <span class="badge bg-success">Active</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <span><strong>RG102</strong>: Alerte automatique quand le stock passe sous le seuil critique</span>
+                                    <span class="badge bg-success">Active</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pratiques Section -->
+    <section id="pratiques" class="py-5">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Bonnes & Mauvaises Pratiques</h2>
+            <p class="lead mb-5 animate-on-scroll">Guide des pratiques recommandées et des anti-patterns à éviter.</p>
+            
+            <div class="row animate-on-scroll">
+                <div class="col-md-6">
+                    <h4 class="mb-4 text-success"><i class="fas fa-check-circle me-2"></i> Bonnes Pratiques</h4>
+                    
+                    <div class="practice-card good-practice">
+                        <h5>APIs</h5>
+                        <p class="mb-0">Design RESTful, documentation Swagger/OpenAPI, versionnement sémantique, pagination des résultats, logs et monitoring.</p>
+                    </div>
+                    
+                    <div class="practice-card good-practice">
+                        <h5>Données</h5>
+                        <p class="mb-0">Catalogue de données centralisé, modèle conceptuel unifié, qualité des données mesurée, gouvernance claire.</p>
+                    </div>
+                    
+                    <div class="practice-card good-practice">
+                        <h5>Sécurité</h5>
+                        <p class="mb-0">RBAC (Role-Based Access Control), journalisation des accès, chiffrement des secrets, conformité RGPD et ISO 27001.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <h4 class="mb-4 text-danger"><i class="fas fa-exclamation-triangle me-2"></i> Mauvaises Pratiques</h4>
+                    
+                    <div class="practice-card bad-practice">
+                        <h5>APIs</h5>
+                        <p class="mb-0">APIs non documentées, absence de sécurité, endpoints monolithiques, pas de versionnement, pas de pagination.</p>
+                    </div>
+                    
+                    <div class="practice-card bad-practice">
+                        <h5>Données</h5>
+                        <p class="mb-0">Redondance des données, incohérences, silos métiers, pas de modèle unifié, qualité non mesurée.</p>
+                    </div>
+                    
+                    <div class="practice-card bad-practice">
+                        <h5>Sécurité</h5>
+                        <p class="mb-0">Mots de passe en clair, droits trop permissifs, pas de journalisation, non conformité aux standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outils Section -->
+    <section id="outils" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Stack Technologique</h2>
+            <p class="lead mb-5 animate-on-scroll">Les outils recommandés pour la mise en œuvre du portail.</p>
+            
+            <ul class="nav nav-pills mb-4 justify-content-center animate-on-scroll" id="toolsTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="frontend-tab" data-bs-toggle="pill" data-bs-target="#frontend" type="button" role="tab">Frontend</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="backend-tab" data-bs-toggle="pill" data-bs-target="#backend" type="button" role="tab">Backend</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="data-tab" data-bs-toggle="pill" data-bs-target="#data" type="button" role="tab">Données</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="integration-tab" data-bs-toggle="pill" data-bs-target="#integration" type="button" role="tab">Intégration</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="devops-tab" data-bs-toggle="pill" data-bs-target="#devops" type="button" role="tab">DevOps</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content animate-on-scroll" id="toolsTabContent">
+                <div class="tab-pane fade show active" id="frontend" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="tool-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" alt="React" class="tool-logo">
+                                <h5>ReactJS</h5>
+                                <p class="text-muted">Bibliothèque JavaScript pour construire des interfaces utilisateur</p>
+                                <span class="badge bg-primary">Frontend</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tool-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png" alt="TailwindCSS" class="tool-logo">
+                                <h5>TailwindCSS</h5>
+                                <p class="text-muted">Framework CSS utility-first pour des designs personnalisés</p>
+                                <span class="badge bg-primary">Frontend</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tool-card">
+                                <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="Bootstrap" class="tool-logo">
+                                <h5>Bootstrap</h5>
+                                <p class="text-muted">Framework CSS pour des interfaces responsive</p>
+                                <span class="badge bg-primary">Frontend</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="backend" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="tool-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png" alt="Node.js" class="tool-logo">
+                                <h5>Node.js</h5>
+                                <p class="text-muted">Environnement d'exécution JavaScript côté serveur</p>
+                                <span class="badge bg-success">Backend</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="tool-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/1280px-Flask_logo.svg.png" alt="Flask" class="tool-logo">
+                                <h5>Flask</h5>
+                                <p class="text-muted">Microframework Python pour applications web</p>
+                                <span class="badge bg-success">Backend</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="data" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="tool-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png" alt="PostgreSQL" class="tool-logo">
+                                <h5>PostgreSQL</h5>
+                                <p class="text-muted">Système de gestion de base de données relationnelle</p>
+                                <span class="badge bg-info">Base de données</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tool-card">
+                                <img src="https://modelio.org/images/logo_modelio_black_256.png" alt="Modelio" class="tool-logo">
+                                <h5>Modelio</h5>
+                                <p class="text-muted">Outil de modélisation UML/MCD</p>
+                                <span class="badge bg-info">Modélisation</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tool-card">
+                                <img src="https://camunda.com/wp-content/uploads/2020/09/camunda-logo.png" alt="Camunda" class="tool-logo">
+                                <h5>Camunda</h5>
+                                <p class="text-muted">Plateforme BPMN pour l'automatisation des processus</p>
+                                <span class="badge bg-info">Processus</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="integration" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="tool-card">
+                                <img src="https://wso2.com/files/images/logo-wso2.svg" alt="WSO2" class="tool-logo">
+                                <h5>WSO2 API Manager</h5>
+                                <p class="text-muted">Gestionnaire d'APIs open source</p>
+                                <span class="badge bg-warning text-dark">Intégration</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tool-card">
+                                <img src="https://konghq.com/wp-content/uploads/2018/05/kong-logo-github-readme.png" alt="Kong" class="tool-logo">
+                                <h5>Kong</h5>
+                                <p class="text-muted">API Gateway et Service Mesh</p>
+                                <span class="badge bg-warning text-dark">Intégration</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tool-card">
+                                <img src="https://www.keycloak.org/resources/images/keycloak_logo_480x108.png" alt="Keycloak" class="tool-logo">
+                                <h5>Keycloak</h5>
+                                <p class="text-muted">Solution IAM (Identity and Access Management)</p>
+                                <span class="badge bg-warning text-dark">Sécurité</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="devops" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="tool-card">
+                                <img src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" alt="Docker" class="tool-logo">
+                                <h5>Docker</h5>
+                                <p class="text-muted">Plateforme de conteneurisation</p>
+                                <span class="badge bg-dark">DevOps</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tool-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png" alt="Jenkins" class="tool-logo">
+                                <h5>Jenkins</h5>
+                                <p class="text-muted">Serveur d'intégration continue</p>
+                                <span class="badge bg-dark">DevOps</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tool-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/1200px-Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes" class="tool-logo">
+                                <h5>Kubernetes</h5>
+                                <p class="text-muted">Orchestrateur de conteneurs</p>
+                                <span class="badge bg-dark">DevOps</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Contactez-nous</h2>
+            <p class="lead mb-5 animate-on-scroll">Vous avez des questions ou besoin d'assistance ? Notre équipe est à votre disposition.</p>
+            
+            <div class="row animate-on-scroll">
+                <div class="col-lg-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nom complet</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Sujet</label>
+                            <select class="form-select" id="subject">
+                                <option selected>Choisir un sujet...</option>
+                                <option>Demande d'information</option>
+                                <option>Support technique</option>
+                                <option>Demande de formation</option>
+                                <option>Autre</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-info-circle me-2"></i> Informations</h5>
+                            <hr>
+                            <div class="mb-4">
+                                <h6><i class="fas fa-map-marker-alt me-2"></i> Adresse</h6>
+                                <p class="text-muted">123 Rue de l'Architecture, 75000 Paris, France</p>
+                            </div>
+                            <div class="mb-4">
+                                <h6><i class="fas fa-phone me-2"></i> Téléphone</h6>
+                                <p class="text-muted">+33 1 23 45 67 89</p>
+                            </div>
+                            <div class="mb-4">
+                                <h6><i class="fas fa-envelope me-2"></i> Email</h6>
+                                <p class="text-muted">contact@vision360.com</p>
+                            </div>
+                            <div class="mb-4">
+                                <h6><i class="fas fa-clock me-2"></i> Horaires</h6>
+                                <p class="text-muted">Lundi - Vendredi: 9h00 - 18h00</p>
+                            </div>
+                            <div class="d-flex">
+                                <a href="#" class="btn btn-outline-secondary me-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn btn-outline-secondary me-2"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="btn btn-outline-secondary me-2"><i class="fab fa-github"></i></a>
+                                <a href="#" class="btn btn-outline-secondary"><i class="fab fa-slack"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Vision 360°</h5>
+                    <p>Plateforme unifiée de modélisation et documentation des fonctions métiers, processus, entités, règles de gestion, applications, normes, APIs et données.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#domaines">Domaines</a></li>
+                        <li><a href="#modelisation">Modélisation</a></li>
+                        <li><a href="#apis">APIs</a></li>
+                        <li><a href="#pratiques">Pratiques</a></li>
+                        <li><a href="#outils">Outils</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Ressources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutoriels</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Légal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">CGU</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-0 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Vision 360°. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Conçu avec <i class="fas fa-heart text-danger"></i> pour l'architecture d'entreprise</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Modal for Domain Details -->
+    <div class="modal fade" id="rhModal" tabindex="-1" aria-labelledby="rhModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="rhModalLabel"><i class="fas fa-users me-2"></i> Ressources Humaines</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Objectifs</h6>
+                            <ul>
+                                <li>Recruter les talents</li>
+                                <li>Former et développer les compétences</li>
+                                <li>Fidéliser les collaborateurs</li>
+                                <li>Gérer la paie et les carrières</li>
+                            </ul>
+                            
+                            <h6 class="mt-4">Acteurs</h6>
+                            <ul>
+                                <li>Service RH</li>
+                                <li>Managers</li>
+                                <li>Collaborateurs</li>
+                            </ul>
+                            
+                            <h6 class="mt-4">KPIs</h6>
+                            <ul>
+                                <li>Turnover</li>
+                                <li>Temps de recrutement</li>
+                                <li>Taux d'absentéisme</li>
+                                <li>Taux de satisfaction</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Entités</h6>
+                            <ul>
+                                <li>Employé</li>
+                                <li>Contrat</li>
+                                <li>Poste</li>
+                                <li>Compétence</li>
+                                <li>Paie</li>
+                                <li>Formation</li>
+                            </ul>
+                            
+                            <h6 class="mt-4">Règles de gestion</h6>
+                            <ul>
+                                <li>Un employé ne peut avoir deux contrats actifs simultanément</li>
+                                <li>Tout nouvel employé doit suivre un onboarding dans les 15 jours</li>
+                                <li>Les entretiens annuels doivent être réalisés dans le premier trimestre</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Similar modals for other domains would be added here -->
+    <!-- Finance Modal -->
+    <div class="modal fade" id="financeModal" tabindex="-1" aria-labelledby="financeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="financeModalLabel"><i class="fas fa-euro-sign me-2"></i> Finance & Comptabilité</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Objectifs</h6>
+                            <ul>
+                                <li>Gérer les flux comptables</li>
+                                <li>Assurer la conformité fiscale</li>
+                                <li>Réaliser les audits internes</li>
+                                <li>Produire les états financiers</li>
+                            </ul>
+                            
+                            <h6 class="mt-4">Processus clés</h6>
+                            <ul>
+                                <li>Saisie comptable</li>
+                                <li>Déclaration TVA</li>
+                                <li>Audit interne</li>
+                                <li>Clôture annuelle</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Entités</h6>
+                            <ul>
+                                <li>Écriture</li>
+                                <li>Journal</li>
+                                <li>Compte</li>
+                                <li>Facture</li>
+                                <li>Fournisseur</li>
+                            </ul>
+                            
+                            <h6 class="mt-4">Règles clés</h6>
+                            <ul>
+                                <li>Principe de séparation des tâches</li>
+                                <li>Régularisation trimestrielle</li>
+                                <li>Validation à deux niveaux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- All Domains Modal -->
+    <div class="modal fade" id="allDomainsModal" tabindex="-1" aria-labelledby="allDomainsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="allDomainsModalLabel"><i class="fas fa-layer-group me-2"></i> Tous les Domaines Fonctionnels</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Domaine</th>
+                                    <th>Objectifs</th>
+                                    <th>Processus clés</th>
+                                    <th>Outils</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Ressources Humaines</strong></td>
+                                    <td>Recruter, former, fidéliser, gérer la paie et les carrières</td>
+                                    <td>Recrutement, Onboarding, Formation, Entretien annuel, Gestion des absences, Paie</td>
+                                    <td>OrangeHRM (OS), SAGE Paie, Odoo RH</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Finance, Comptabilité, Audit</strong></td>
+                                    <td>Gérer les flux comptables, la fiscalité, l'audit</td>
+                                    <td>Saisie comptable, Déclaration TVA, Audit interne, Clôture annuelle</td>
+                                    <td>Dolibarr (OS), QuickBooks, SAP FI, Axelor</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Logistique & Patrimoine</strong></td>
+                                    <td>Gérer les stocks, entrepôts, biens matériels et immobilisations</td>
+                                    <td>Entrée/sortie, Inventaire, Transport, Affectation patrimoine</td>
+                                    <td>ERPNext, Odoo Logistique, AssetTiger</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Marketing, Vente & Expérience Client</strong></td>
+                                    <td>Attirer, convertir, fidéliser, améliorer l'expérience</td>
+                                    <td>Campagne, Prospection, Vente, Service client, Enquête satisfaction</td>
+                                    <td>SuiteCRM (OS), HubSpot, Odoo CRM, Mautic (OS)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>GMAO – Maintenance Assistée</strong></td>
+                                    <td>Gérer l'entretien des équipements, planifier les interventions</td>
+                                    <td>Planification, Intervention, Maintenance préventive/corrective</td>
+                                    <td>OpenMAINT (OS), CARL Source, Infor EAM</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Achats & Approvisionnements</strong></td>
+                                    <td>Gérer le cycle fournisseur, commande, livraison</td>
+                                    <td>Demande d'achat, Commande, Réception, Facturation</td>
+                                    <td>ERPNext, Odoo Achat, Openbravo</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Systèmes d'information & Sécurité</strong></td>
+                                    <td>Maintenir l'intégrité, disponibilité et sécurité du SI</td>
+                                    <td>Gestion des accès, Incidents, Audit, PSSI</td>
+                                    <td>Keycloak (IAM), WSO2 API Manager, Graylog (logs), Vault (secrets)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Juridique & Conformité</strong></td>
+                                    <td>Gérer les obligations réglementaires et contrats</td>
+                                    <td>Rédaction, Approbation, Archivage, Renouvellement</td>
+                                    <td>ContractZen, Odoo Légal, DocuSign</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Gouvernance & Direction</strong></td>
+                                    <td>Piloter la performance globale de l'entreprise</td>
+                                    <td>Budget, Indicateurs, Projets stratégiques</td>
+                                    <td>PowerBI, Metabase (OS), Tableau</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Innovation & Digital</strong></td>
+                                    <td>Initier et piloter les innovations : IA, IoT, DevOps, etc.</td>
+                                    <td>Veille, POC, Déploiement, Mesure de la valeur</td>
+                                    <td>Python, Node.js, Docker, GitLab CI/CD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animate on scroll
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+        
+        // Form submission
+        const contactForm = document.querySelector('#contact form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Merci pour votre message! Nous vous contacterons bientôt.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
