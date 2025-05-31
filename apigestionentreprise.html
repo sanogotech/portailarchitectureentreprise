@@ -11,6 +11,8 @@
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
             --accent-color: #e74c3c;
+            --marketing-color: #9b59b6;
+            --gmao-color: #1abc9c;
         }
         
         body {
@@ -39,29 +41,39 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
         
-        .badge-rh { background-color: #e74c3c; }
+        .badge-rh { background-color: var(--accent-color); }
         .badge-finance { background-color: #2ecc71; }
         .badge-logistique { background-color: #f39c12; }
-        .badge-marketing { background-color: #9b59b6; }
-        .badge-gmao { background-color: #1abc9c; }
+        .badge-marketing { background-color: var(--marketing-color); }
+        .badge-gmao { background-color: var(--gmao-color); }
         
-        .api-item {
+        .btn-outline-purple {
+            color: var(--marketing-color);
+            border-color: var(--marketing-color);
+        }
+        
+        .btn-outline-purple:hover {
+            background-color: var(--marketing-color);
+            color: white;
+        }
+        
+        .btn-outline-teal {
+            color: var(--gmao-color);
+            border-color: var(--gmao-color);
+        }
+        
+        .btn-outline-teal:hover {
+            background-color: var(--gmao-color);
+            color: white;
+        }
+        
+        .api-item, .rule-item {
             padding: 1rem;
             border-bottom: 1px solid #eee;
             transition: background-color 0.2s;
         }
         
-        .api-item:hover {
-            background-color: #f8f9fa;
-        }
-        
-        .rule-item {
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
-            transition: background-color 0.2s;
-        }
-        
-        .rule-item:hover {
+        .api-item:hover, .rule-item:hover {
             background-color: #f8f9fa;
         }
         
@@ -80,13 +92,6 @@
         
         .nav-pills .nav-link.active {
             background-color: var(--secondary-color);
-        }
-        
-        .tab-content {
-            padding: 1.5rem;
-            background-color: white;
-            border-radius: 0 0 8px 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
         .domain-link {
@@ -171,7 +176,44 @@
                                 </div>
                             </div>
                             
-                            <!-- 3 autres APIs RH -->
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/absences</h5>
+                                        <p class="mb-0">Gestion des absences et congés</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-post method-badge">POST</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/paie</h5>
+                                        <p class="mb-0">Calcul et gestion de la paie</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-patch method-badge">PATCH</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/competences</h5>
+                                        <p class="mb-0">Gestion des compétences et formations</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-put method-badge">PUT</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                         <h4 class="mb-3"><i class="fas fa-gavel me-2"></i>Top 5 Règles</h4>
@@ -197,7 +239,35 @@
                                 </div>
                             </div>
                             
-                            <!-- 3 autres règles RH -->
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG003</h5>
+                                        <p class="mb-0">Les entretiens annuels doivent être réalisés dans le premier trimestre</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG004</h5>
+                                        <p class="mb-0">Validation hiérarchique obligatoire pour les congés > 2 semaines</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG005</h5>
+                                        <p class="mb-0">Toute modification de salaire nécessite une double validation</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -238,7 +308,43 @@
                                 </div>
                             </div>
                             
-                            <!-- 3 autres APIs Finance -->
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/budget</h5>
+                                        <p class="mb-0">Suivi budgétaire par département</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-put method-badge">PUT</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/tva</h5>
+                                        <p class="mb-0">Calcul et déclaration de TVA</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-post method-badge">POST</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/rapports</h5>
+                                        <p class="mb-0">Génération des rapports financiers</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge">GET</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                         <h4 class="mb-3"><i class="fas fa-gavel me-2"></i>Top 5 Règles</h4>
@@ -264,7 +370,35 @@
                                 </div>
                             </div>
                             
-                            <!-- 3 autres règles Finance -->
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG050</h5>
+                                        <p class="mb-0">Clôture mensuelle obligatoire avant le 10 du mois suivant</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG051</h5>
+                                        <p class="mb-0">Toute dépense > 10 000€ nécessite une validation préalable</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG052</h5>
+                                        <p class="mb-0">Rapprochement bancaire hebdomadaire obligatoire</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -305,7 +439,44 @@
                                 </div>
                             </div>
                             
-                            <!-- 3 autres APIs Logistique -->
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/expeditions</h5>
+                                        <p class="mb-0">Gestion des expéditions clients</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-put method-badge">PUT</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/patrimoine</h5>
+                                        <p class="mb-0">Gestion du parc matériel</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-patch method-badge">PATCH</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/fournisseurs</h5>
+                                        <p class="mb-0">Référentiel des fournisseurs logistiques</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-post method-badge">POST</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                         <h4 class="mb-3"><i class="fas fa-gavel me-2"></i>Top 5 Règles</h4>
@@ -331,7 +502,298 @@
                                 </div>
                             </div>
                             
-                            <!-- 3 autres règles Logistique -->
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG103</h5>
+                                        <p class="mb-0">Double contrôle obligatoire pour les sorties de stock > 1000€</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG104</h5>
+                                        <p class="mb-0">Inventaire physique trimestriel obligatoire</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG105</h5>
+                                        <p class="mb-0">Validation hiérarchique pour les commandes > 5000€</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketing Domain -->
+                <div class="card domain-card mb-4" id="marketing">
+                    <div class="card-header text-white d-flex justify-content-between align-items-center" style="background-color: var(--marketing-color);">
+                        <h3 class="mb-0"><i class="fas fa-bullhorn me-2"></i>Marketing</h3>
+                        <a href="domaines.html#marketing" class="btn btn-sm btn-light">Voir domaine complet</a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="mb-3"><i class="fas fa-code me-2"></i>Top 5 APIs</h4>
+                        
+                        <div class="list-group mb-4">
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/clients</h5>
+                                        <p class="mb-0">Gestion du référentiel clients</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-post method-badge">POST</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/campagnes</h5>
+                                        <p class="mb-0">Gestion des campagnes marketing</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-put method-badge">PUT</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/leads</h5>
+                                        <p class="mb-0">Gestion des prospects et opportunités</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-patch method-badge">PATCH</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/analytics</h5>
+                                        <p class="mb-0">Données analytiques des campagnes</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge">GET</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/satisfaction</h5>
+                                        <p class="mb-0">Enquêtes de satisfaction clients</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-post method-badge">POST</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="mb-3"><i class="fas fa-gavel me-2"></i>Top 5 Règles</h4>
+                        
+                        <div class="list-group">
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG201</h5>
+                                        <p class="mb-0">Tout nouveau lead doit être contacté sous 48h</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG202</h5>
+                                        <p class="mb-0">Validation obligatoire pour les campagnes > 10 000€</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG203</h5>
+                                        <p class="mb-0">Enquête de satisfaction annuelle obligatoire pour les clients VIP</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG204</h5>
+                                        <p class="mb-0">Relance automatique des paniers abandonnés après 24h</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG205</h5>
+                                        <p class="mb-0">Segmentation client mise à jour trimestriellement</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GMAO Domain -->
+                <div class="card domain-card mb-4" id="gmao">
+                    <div class="card-header text-white d-flex justify-content-between align-items-center" style="background-color: var(--gmao-color);">
+                        <h3 class="mb-0"><i class="fas fa-tools me-2"></i>GMAO</h3>
+                        <a href="domaines.html#gmao" class="btn btn-sm btn-light">Voir domaine complet</a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="mb-3"><i class="fas fa-code me-2"></i>Top 5 APIs</h4>
+                        
+                        <div class="list-group mb-4">
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/equipements</h5>
+                                        <p class="mb-0">Référentiel des équipements</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-post method-badge">POST</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/interventions</h5>
+                                        <p class="mb-0">Gestion des interventions de maintenance</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-put method-badge">PUT</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/planning</h5>
+                                        <p class="mb-0">Planification des maintenances préventives</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-patch method-badge">PATCH</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/alertes</h5>
+                                        <p class="mb-0">Gestion des alertes techniques</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-post method-badge">POST</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="api-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">/api/contrats</h5>
+                                        <p class="mb-0">Gestion des contrats de maintenance</p>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-get method-badge me-1">GET</span>
+                                        <span class="badge bg-delete method-badge">DELETE</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="mb-3"><i class="fas fa-gavel me-2"></i>Top 5 Règles</h4>
+                        
+                        <div class="list-group">
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG301</h5>
+                                        <p class="mb-0">Maintenance préventive obligatoire selon calendrier constructeur</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG302</h5>
+                                        <p class="mb-0">Intervention corrective dans les 24h pour les équipements critiques</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG303</h5>
+                                        <p class="mb-0">Rapport d'intervention obligatoire avant clôture</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG304</h5>
+                                        <p class="mb-0">Validation hiérarchique pour les interventions > 2000€</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">RG305</h5>
+                                        <p class="mb-0">Audit semestriel des équipements sous garantie</p>
+                                    </div>
+                                    <span class="badge bg-success align-self-center">Active</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -398,6 +860,14 @@
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Logistique
                                 <span class="badge bg-warning rounded-pill">5</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Marketing
+                                <span class="badge rounded-pill" style="background-color: var(--marketing-color);">5</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                GMAO
+                                <span class="badge rounded-pill" style="background-color: var(--gmao-color);">5</span>
                             </li>
                         </ul>
                     </div>
