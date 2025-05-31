@@ -302,192 +302,373 @@
     </section>
 
     <!-- Domaines Section -->
-    <section id="domaines" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Domaines Fonctionnels</h2>
-            <p class="lead mb-5 animate-on-scroll">Découvrez les 10 domaines clés de l'entreprise avec leurs processus, acteurs et outils associés.</p>
-            
-            <div class="row">
-                <!-- RH -->
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
-                    <div class="card card-domain">
-                        <div class="card-header d-flex align-items-center">
-                            <i class="fas fa-users me-3 domain-icon"></i>
-                            <div>
-                                <h5 class="mb-0">Ressources Humaines</h5>
-                                <small class="text-white-50">Recrutement, formation, paie</small>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="text-muted">Processus clés:</h6>
-                            <ul>
-                                <li>Recrutement</li>
-                                <li>Onboarding</li>
-                                <li>Gestion des carrières</li>
-                                <li>Paie</li>
-                            </ul>
-                            <h6 class="text-muted mt-3">Outils:</h6>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-secondary me-2 mb-2">OrangeHRM</span>
-                                <span class="badge bg-secondary me-2 mb-2">SAGE Paie</span>
-                                <span class="badge bg-secondary me-2 mb-2">Odoo RH</span>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#rhModal">Voir détail</a>
+    <!-- Domaines Section -->
+<section id="domaines" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Domaines Fonctionnels</h2>
+        <p class="lead mb-5 animate-on-scroll">Découvrez les 12 domaines clés de l'entreprise avec leurs processus, acteurs et outils associés.</p>
+        
+        <div class="row">
+            <!-- RH -->
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="card card-domain">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-users me-3 domain-icon"></i>
+                        <div>
+                            <h5 class="mb-0">Ressources Humaines</h5>
+                            <small class="text-white-50">Recrutement, formation, paie</small>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Finance -->
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
-                    <div class="card card-domain">
-                        <div class="card-header d-flex align-items-center">
-                            <i class="fas fa-euro-sign me-3 domain-icon"></i>
-                            <div>
-                                <h5 class="mb-0">Finance & Comptabilité</h5>
-                                <small class="text-white-50">Flux comptables, fiscalité, audit</small>
-                            </div>
+                    <div class="card-body">
+                        <h6 class="text-muted">Processus clés:</h6>
+                        <ul>
+                            <li>Recrutement</li>
+                            <li>Onboarding</li>
+                            <li>Gestion des carrières</li>
+                            <li>Paie</li>
+                        </ul>
+                        <h6 class="text-muted mt-3">Outils:</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">OrangeHRM</span>
+                            <span class="badge bg-secondary me-2 mb-2">SAGE Paie</span>
+                            <span class="badge bg-secondary me-2 mb-2">Odoo RH</span>
                         </div>
-                        <div class="card-body">
-                            <h6 class="text-muted">Processus clés:</h6>
-                            <ul>
-                                <li>Saisie comptable</li>
-                                <li>Déclaration TVA</li>
-                                <li>Audit interne</li>
-                                <li>Clôture annuelle</li>
-                            </ul>
-                            <h6 class="text-muted mt-3">Outils:</h6>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-secondary me-2 mb-2">Dolibarr</span>
-                                <span class="badge bg-secondary me-2 mb-2">QuickBooks</span>
-                                <span class="badge bg-secondary me-2 mb-2">SAP FI</span>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#financeModal">Voir détail</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Logistique -->
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
-                    <div class="card card-domain">
-                        <div class="card-header d-flex align-items-center">
-                            <i class="fas fa-truck me-3 domain-icon"></i>
-                            <div>
-                                <h5 class="mb-0">Logistique & Patrimoine</h5>
-                                <small class="text-white-50">Stocks, entrepôts, biens matériels</small>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="text-muted">Processus clés:</h6>
-                            <ul>
-                                <li>Gestion des stocks</li>
-                                <li>Inventaire</li>
-                                <li>Transport</li>
-                                <li>Affectation patrimoine</li>
-                            </ul>
-                            <h6 class="text-muted mt-3">Outils:</h6>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-secondary me-2 mb-2">ERPNext</span>
-                                <span class="badge bg-secondary me-2 mb-2">Odoo Logistique</span>
-                                <span class="badge bg-secondary me-2 mb-2">AssetTiger</span>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#logistiqueModal">Voir détail</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Marketing -->
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
-                    <div class="card card-domain">
-                        <div class="card-header d-flex align-items-center">
-                            <i class="fas fa-bullhorn me-3 domain-icon"></i>
-                            <div>
-                                <h5 class="mb-0">Marketing & Vente</h5>
-                                <small class="text-white-50">Expérience client, fidélisation</small>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="text-muted">Processus clés:</h6>
-                            <ul>
-                                <li>Campagnes marketing</li>
-                                <li>Prospection</li>
-                                <li>Vente</li>
-                                <li>Service client</li>
-                            </ul>
-                            <h6 class="text-muted mt-3">Outils:</h6>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-secondary me-2 mb-2">SuiteCRM</span>
-                                <span class="badge bg-secondary me-2 mb-2">HubSpot</span>
-                                <span class="badge bg-secondary me-2 mb-2">Mautic</span>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#marketingModal">Voir détail</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- GMAO -->
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
-                    <div class="card card-domain">
-                        <div class="card-header d-flex align-items-center">
-                            <i class="fas fa-tools me-3 domain-icon"></i>
-                            <div>
-                                <h5 class="mb-0">GMAO</h5>
-                                <small class="text-white-50">Maintenance assistée</small>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="text-muted">Processus clés:</h6>
-                            <ul>
-                                <li>Planification</li>
-                                <li>Intervention</li>
-                                <li>Maintenance préventive</li>
-                                <li>Maintenance corrective</li>
-                            </ul>
-                            <h6 class="text-muted mt-3">Outils:</h6>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-secondary me-2 mb-2">OpenMAINT</span>
-                                <span class="badge bg-secondary me-2 mb-2">CARL Source</span>
-                                <span class="badge bg-secondary me-2 mb-2">Infor EAM</span>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#gmaoModal">Voir détail</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Achats -->
-                <div class="col-md-6 col-lg-4 animate-on-scroll">
-                    <div class="card card-domain">
-                        <div class="card-header d-flex align-items-center">
-                            <i class="fas fa-shopping-cart me-3 domain-icon"></i>
-                            <div>
-                                <h5 class="mb-0">Achats & Approvisionnements</h5>
-                                <small class="text-white-50">Cycle fournisseur, commande</small>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h6 class="text-muted">Processus clés:</h6>
-                            <ul>
-                                <li>Demande d'achat</li>
-                                <li>Commande</li>
-                                <li>Réception</li>
-                                <li>Facturation</li>
-                            </ul>
-                            <h6 class="text-muted mt-3">Outils:</h6>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-secondary me-2 mb-2">ERPNext</span>
-                                <span class="badge bg-secondary me-2 mb-2">Odoo Achat</span>
-                                <span class="badge bg-secondary me-2 mb-2">Openbravo</span>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#achatsModal">Voir détail</a>
-                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#rhModal">Voir détail</a>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-4 animate-on-scroll">
-                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#allDomainsModal">Voir tous les domaines</a>
+            <!-- Finance -->
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="card card-domain">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-euro-sign me-3 domain-icon"></i>
+                        <div>
+                            <h5 class="mb-0">Finance & Comptabilité</h5>
+                            <small class="text-white-50">Flux comptables, fiscalité, audit</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-muted">Processus clés:</h6>
+                        <ul>
+                            <li>Saisie comptable</li>
+                            <li>Déclaration TVA</li>
+                            <li>Audit interne</li>
+                            <li>Clôture annuelle</li>
+                        </ul>
+                        <h6 class="text-muted mt-3">Outils:</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">Dolibarr</span>
+                            <span class="badge bg-secondary me-2 mb-2">QuickBooks</span>
+                            <span class="badge bg-secondary me-2 mb-2">SAP FI</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#financeModal">Voir détail</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Logistique -->
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="card card-domain">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-truck me-3 domain-icon"></i>
+                        <div>
+                            <h5 class="mb-0">Logistique & Patrimoine</h5>
+                            <small class="text-white-50">Stocks, entrepôts, biens matériels</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-muted">Processus clés:</h6>
+                        <ul>
+                            <li>Gestion des stocks</li>
+                            <li>Inventaire</li>
+                            <li>Transport</li>
+                            <li>Affectation patrimoine</li>
+                        </ul>
+                        <h6 class="text-muted mt-3">Outils:</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">ERPNext</span>
+                            <span class="badge bg-secondary me-2 mb-2">Odoo Logistique</span>
+                            <span class="badge bg-secondary me-2 mb-2">AssetTiger</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#logistiqueModal">Voir détail</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Marketing -->
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="card card-domain">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-bullhorn me-3 domain-icon"></i>
+                        <div>
+                            <h5 class="mb-0">Marketing & Vente</h5>
+                            <small class="text-white-50">Expérience client, fidélisation</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-muted">Processus clés:</h6>
+                        <ul>
+                            <li>Campagnes marketing</li>
+                            <li>Prospection</li>
+                            <li>Vente</li>
+                            <li>Service client</li>
+                        </ul>
+                        <h6 class="text-muted mt-3">Outils:</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">SuiteCRM</span>
+                            <span class="badge bg-secondary me-2 mb-2">HubSpot</span>
+                            <span class="badge bg-secondary me-2 mb-2">Mautic</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#marketingModal">Voir détail</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GMAO -->
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="card card-domain">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-tools me-3 domain-icon"></i>
+                        <div>
+                            <h5 class="mb-0">GMAO</h5>
+                            <small class="text-white-50">Maintenance assistée</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-muted">Processus clés:</h6>
+                        <ul>
+                            <li>Planification</li>
+                            <li>Intervention</li>
+                            <li>Maintenance préventive</li>
+                            <li>Maintenance corrective</li>
+                        </ul>
+                        <h6 class="text-muted mt-3">Outils:</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">OpenMAINT</span>
+                            <span class="badge bg-secondary me-2 mb-2">CARL Source</span>
+                            <span class="badge bg-secondary me-2 mb-2">Infor EAM</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#gmaoModal">Voir détail</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Achats -->
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="card card-domain">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-shopping-cart me-3 domain-icon"></i>
+                        <div>
+                            <h5 class="mb-0">Achats & Approvisionnements</h5>
+                            <small class="text-white-50">Cycle fournisseur, commande</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-muted">Processus clés:</h6>
+                        <ul>
+                            <li>Demande d'achat</li>
+                            <li>Commande</li>
+                            <li>Réception</li>
+                            <li>Facturation</li>
+                        </ul>
+                        <h6 class="text-muted mt-3">Outils:</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">ERPNext</span>
+                            <span class="badge bg-secondary me-2 mb-2">Odoo Achat</span>
+                            <span class="badge bg-secondary me-2 mb-2">Openbravo</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#achatsModal">Voir détail</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SI & Sécurité -->
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="card card-domain">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-shield-alt me-3 domain-icon"></i>
+                        <div>
+                            <h5 class="mb-0">SI & Sécurité</h5>
+                            <small class="text-white-50">Intégrité, disponibilité, sécurité</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-muted">Processus clés:</h6>
+                        <ul>
+                            <li>Gestion des accès</li>
+                            <li>Traitement des incidents</li>
+                            <li>Audit de sécurité</li>
+                            <li>Mise à jour PSSI</li>
+                        </ul>
+                        <h6 class="text-muted mt-3">Outils:</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">Keycloak</span>
+                            <span class="badge bg-secondary me-2 mb-2">WSO2</span>
+                            <span class="badge bg-secondary me-2 mb-2">Vault</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#siModal">Voir détail</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Juridique -->
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="card card-domain">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-gavel me-3 domain-icon"></i>
+                        <div>
+                            <h5 class="mb-0">Juridique & Conformité</h5>
+                            <small class="text-white-50">Obligations, contrats, réglementation</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-muted">Processus clés:</h6>
+                        <ul>
+                            <li>Rédaction contractuelle</li>
+                            <li>Approbation juridique</li>
+                            <li>Archivage</li>
+                            <li>Renouvellement</li>
+                        </ul>
+                        <h6 class="text-muted mt-3">Outils:</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">ContractZen</span>
+                            <span class="badge bg-secondary me-2 mb-2">Odoo Légal</span>
+                            <span class="badge bg-secondary me-2 mb-2">DocuSign</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#juridiqueModal">Voir détail</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gouvernance -->
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="card card-domain">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-chart-line me-3 domain-icon"></i>
+                        <div>
+                            <h5 class="mb-0">Gouvernance & Direction</h5>
+                            <small class="text-white-50">Performance, stratégie, pilotage</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-muted">Processus clés:</h6>
+                        <ul>
+                            <li>Élaboration budget</li>
+                            <li>Définition indicateurs</li>
+                            <li>Projets stratégiques</li>
+                            <li>Reporting</li>
+                        </ul>
+                        <h6 class="text-muted mt-3">Outils:</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">PowerBI</span>
+                            <span class="badge bg-secondary me-2 mb-2">Metabase</span>
+                            <span class="badge bg-secondary me-2 mb-2">Tableau</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#directionModal">Voir détail</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Innovation -->
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="card card-domain">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-lightbulb me-3 domain-icon"></i>
+                        <div>
+                            <h5 class="mb-0">Innovation & Digital</h5>
+                            <small class="text-white-50">IA, IoT, DevOps, Transformation</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-muted">Processus clés:</h6>
+                        <ul>
+                            <li>Veille technologique</li>
+                            <li>Proof of Concept</li>
+                            <li>Déploiement</li>
+                            <li>Mesure valeur</li>
+                        </ul>
+                        <h6 class="text-muted mt-3">Technologies:</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">Python</span>
+                            <span class="badge bg-secondary me-2 mb-2">Node.js</span>
+                            <span class="badge bg-secondary me-2 mb-2">Docker</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#innovationModal">Voir détail</a>
+                    </div>
+                </div>
+            </div>
+			
+			<!-- Qualité -->
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="card card-domain">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-award me-3 domain-icon"></i>
+                        <div>
+                            <h5 class="mb-0">Qualité & Excellence Opérationnelle</h5>
+                            <small class="text-white-50">Normes, processus, amélioration continue</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-muted">Processus clés:</h6>
+                        <ul>
+                            <li>Gestion des non-conformités</li>
+                            <li>Audits qualité internes</li>
+                            <li>Amélioration continue</li>
+                            <li>Certifications</li>
+                        </ul>
+                        <h6 class="text-muted mt-3">Outils:</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">QualiSoft</span>
+                            <span class="badge bg-secondary me-2 mb-2">Kaizen</span>
+                            <span class="badge bg-secondary me-2 mb-2">LeanIX</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#qualiteModal">Voir détail</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- R&D -->
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="card card-domain">
+                    <div class="card-header d-flex align-items-center">
+                        <i class="fas fa-flask me-3 domain-icon"></i>
+                        <div>
+                            <h5 class="mb-0">Recherche & Développement</h5>
+                            <small class="text-white-50">Innovation, prototypes, brevets</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-muted">Processus clés:</h6>
+                        <ul>
+                            <li>Veille technologique</li>
+                            <li>Développement produits</li>
+                            <li>Tests et validation</li>
+                            <li>Gestion des brevets</li>
+                        </ul>
+                        <h6 class="text-muted mt-3">Outils:</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">JIRA R&D</span>
+                            <span class="badge bg-secondary me-2 mb-2">SolidWorks</span>
+                            <span class="badge bg-secondary me-2 mb-2">LabView</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#rndModal">Voir détail</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+			
+			
+			
+			
+        </div>
+        
+        <div class="text-center mt-4 animate-on-scroll">
+            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#allDomainsModal">Voir tous les domaines</a>
+        </div>
+    </div>
+</section>
 
     <!-- Modélisation Section -->
     <section id="modelisation" class="py-5">
@@ -1099,6 +1280,721 @@
             </div>
         </div>
     </div>
+	
+	<!-- Modals pour les nouveaux domaines -->
+<!-- Qualité Modal -->
+<div class="modal fade" id="qualiteModal" tabindex="-1" aria-labelledby="qualiteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-blue text-white">
+                <style>.bg-blue {background-color: #3498db !important;}</style>
+                <h5 class="modal-title" id="qualiteModalLabel"><i class="fas fa-award me-2"></i> Qualité & Excellence Opérationnelle</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Objectifs</h6>
+                        <ul>
+                            <li>Garantir la conformité aux normes</li>
+                            <li>Améliorer les processus internes</li>
+                            <li>Réduire les non-conformités</li>
+                            <li>Maintenir les certifications</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Processus clés</h6>
+                        <ul>
+                            <li>Gestion des non-conformités</li>
+                            <li>Audits qualité internes</li>
+                            <li>Processus d'amélioration continue</li>
+                            <li>Gestion des certifications</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">KPIs</h6>
+                        <ul>
+                            <li>Taux de non-conformités</li>
+                            <li>Temps de résolution des NC</li>
+                            <li>Taux de conformité aux normes</li>
+                            <li>Nombre de certifications maintenues</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Entités</h6>
+                        <ul>
+                            <li>Non-conformité</li>
+                            <li>Action corrective</li>
+                            <li>Audit</li>
+                            <li>Norme</li>
+                            <li>Certification</li>
+                            <li>Processus</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Règles clés</h6>
+                        <ul>
+                            <li>Toute NC doit être documentée</li>
+                            <li>Audits trimestriels obligatoires</li>
+                            <li>Revue annuelle des processus</li>
+                            <li>Formation qualité obligatoire</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Outils associés</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">QualiSoft</span>
+                            <span class="badge bg-secondary me-2 mb-2">Kaizen</span>
+                            <span class="badge bg-secondary me-2 mb-2">LeanIX</span>
+                            <span class="badge bg-secondary me-2 mb-2">ISO Track</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- R&D Modal -->
+<div class="modal fade" id="rndModal" tabindex="-1" aria-labelledby="rndModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-indigo text-white">
+                <style>.bg-indigo {background-color: #6610f2 !important;}</style>
+                <h5 class="modal-title" id="rndModalLabel"><i class="fas fa-flask me-2"></i> Recherche & Développement</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Objectifs</h6>
+                        <ul>
+                            <li>Innover et développer de nouveaux produits</li>
+                            <li>Protéger la propriété intellectuelle</li>
+                            <li>Optimiser les solutions existantes</li>
+                            <li>Anticiper les tendances technologiques</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Processus clés</h6>
+                        <ul>
+                            <li>Veille technologique</li>
+                            <li>Développement de prototypes</li>
+                            <li>Tests et validation</li>
+                            <li>Gestion des brevets</li>
+                            <li>Transfert vers la production</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">KPIs</h6>
+                        <ul>
+                            <li>Nombre de brevets déposés</li>
+                            <li>Temps de développement</li>
+                            <li>Taux de réussite des prototypes</li>
+                            <li>ROI des projets R&D</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Entités</h6>
+                        <ul>
+                            <li>Projet R&D</li>
+                            <li>Brevets</li>
+                            <li>Prototype</li>
+                            <li>Test</li>
+                            <li>Rapport d'innovation</li>
+                            <li>Technologie</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Règles clés</h6>
+                        <ul>
+                            <li>Évaluation préalable des projets</li>
+                            <li>Protocole de test standardisé</li>
+                            <li>Documentation exhaustive</li>
+                            <li>Protection IP avant publication</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Outils associés</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">JIRA R&D</span>
+                            <span class="badge bg-secondary me-2 mb-2">SolidWorks</span>
+                            <span class="badge bg-secondary me-2 mb-2">LabView</span>
+                            <span class="badge bg-secondary me-2 mb-2">PatentSight</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+	
+	<!-- Logistique & Patrimoine Modal -->
+<div class="modal fade" id="logistiqueModal" tabindex="-1" aria-labelledby="logistiqueModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-dark">
+                <h5 class="modal-title" id="logistiqueModalLabel"><i class="fas fa-truck me-2"></i> Logistique & Patrimoine</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Objectifs</h6>
+                        <ul>
+                            <li>Gérer les stocks et entrepôts</li>
+                            <li>Optimiser la chaîne logistique</li>
+                            <li>Suivre les biens matériels</li>
+                            <li>Gérer les immobilisations</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Processus clés</h6>
+                        <ul>
+                            <li>Entrée/sortie de stock</li>
+                            <li>Inventaire physique</li>
+                            <li>Transport et livraison</li>
+                            <li>Affectation du patrimoine</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">KPIs</h6>
+                        <ul>
+                            <li>Taux de rotation des stocks</li>
+                            <li>Taux de service (disponibilité)</li>
+                            <li>Coût logistique par unité</li>
+                            <li>Précision des inventaires</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Entités</h6>
+                        <ul>
+                            <li>Article</li>
+                            <li>Stock</li>
+                            <li>Entrepôt</li>
+                            <li>Véhicule</li>
+                            <li>Bâtiment</li>
+                            <li>Fournisseur logistique</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Règles clés</h6>
+                        <ul>
+                            <li>Application de la méthode FIFO</li>
+                            <li>Seuil d'alerte pour réapprovisionnement</li>
+                            <li>Validation à deux niveaux pour les sorties</li>
+                            <li>Inventaire annuel obligatoire</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Outils associés</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">ERPNext</span>
+                            <span class="badge bg-secondary me-2 mb-2">Odoo Logistique</span>
+                            <span class="badge bg-secondary me-2 mb-2">AssetTiger</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Marketing & Vente Modal -->
+<div class="modal fade" id="marketingModal" tabindex="-1" aria-labelledby="marketingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-purple text-white">
+                <style>.bg-purple {background-color: #9b59b6 !important;}</style>
+                <h5 class="modal-title" id="marketingModalLabel"><i class="fas fa-bullhorn me-2"></i> Marketing & Vente</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Objectifs</h6>
+                        <ul>
+                            <li>Attirer de nouveaux clients</li>
+                            <li>Convertir les prospects</li>
+                            <li>Fidéliser la clientèle</li>
+                            <li>Améliorer l'expérience client</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Processus clés</h6>
+                        <ul>
+                            <li>Campagnes marketing</li>
+                            <li>Prospection commerciale</li>
+                            <li>Cycle de vente</li>
+                            <li>Service après-vente</li>
+                            <li>Enquête de satisfaction</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">KPIs</h6>
+                        <ul>
+                            <li>Taux de conversion</li>
+                            <li>NPS (Net Promoter Score)</li>
+                            <li>CAC (Coût d'Acquisition Client)</li>
+                            <li>LTV (Valeur à Vie du Client)</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Entités</h6>
+                        <ul>
+                            <li>Client</li>
+                            <li>Contact</li>
+                            <li>Opportunité</li>
+                            <li>Campagne</li>
+                            <li>Ticket SAV</li>
+                            <li>Produit</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Règles clés</h6>
+                        <ul>
+                            <li>Suivi des leads sous 48h</li>
+                            <li>Validation des devis par le manager</li>
+                            <li>Relance automatique des paniers abandonnés</li>
+                            <li>Réponse aux tickets SAV sous 24h</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Outils associés</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">SuiteCRM</span>
+                            <span class="badge bg-secondary me-2 mb-2">HubSpot</span>
+                            <span class="badge bg-secondary me-2 mb-2">Odoo CRM</span>
+                            <span class="badge bg-secondary me-2 mb-2">Mautic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- GMAO Modal -->
+<div class="modal fade" id="gmaoModal" tabindex="-1" aria-labelledby="gmaoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-teal text-white">
+                <style>.bg-teal {background-color: #1abc9c !important;}</style>
+                <h5 class="modal-title" id="gmaoModalLabel"><i class="fas fa-tools me-2"></i> GMAO - Maintenance Assistée</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Objectifs</h6>
+                        <ul>
+                            <li>Gérer l'entretien des équipements</li>
+                            <li>Planifier les interventions</li>
+                            <li>Optimiser les coûts de maintenance</li>
+                            <li>Maximiser la disponibilité</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Processus clés</h6>
+                        <ul>
+                            <li>Planification des maintenances</li>
+                            <li>Intervention corrective</li>
+                            <li>Maintenance préventive</li>
+                            <li>Gestion des contrats</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">KPIs</h6>
+                        <ul>
+                            <li>MTBF (Mean Time Between Failures)</li>
+                            <li>MTTR (Mean Time To Repair)</li>
+                            <li>Taux de disponibilité</li>
+                            <li>Coût de maintenance par actif</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Entités</h6>
+                        <ul>
+                            <li>Machine</li>
+                            <li>Intervention</li>
+                            <li>Technicien</li>
+                            <li>Rapport</li>
+                            <li>Contrat de maintenance</li>
+                            <li>Pièce détachée</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Règles clés</h6>
+                        <ul>
+                            <li>Maintenance préventive planifiée</li>
+                            <li>Validation des rapports d'intervention</li>
+                            <li>Suivi des consommables</li>
+                            <li>Alertes pour les équipements critiques</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Outils associés</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">OpenMAINT</span>
+                            <span class="badge bg-secondary me-2 mb-2">CARL Source</span>
+                            <span class="badge bg-secondary me-2 mb-2">Infor EAM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Achats & Approvisionnements Modal -->
+<div class="modal fade" id="achatsModal" tabindex="-1" aria-labelledby="achatsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-info text-white">
+                <h5 class="modal-title" id="achatsModalLabel"><i class="fas fa-shopping-cart me-2"></i> Achats & Approvisionnements</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Objectifs</h6>
+                        <ul>
+                            <li>Gérer le cycle fournisseur</li>
+                            <li>Optimiser les coûts d'achat</li>
+                            <li>Assurer la qualité des approvisionnements</li>
+                            <li>Maîtriser les engagements</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Processus clés</h6>
+                        <ul>
+                            <li>Demande d'achat</li>
+                            <li>Passation de commande</li>
+                            <li>Réception des marchandises</li>
+                            <li>Facturation fournisseur</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">KPIs</h6>
+                        <ul>
+                            <li>Délai moyen d'approvisionnement</li>
+                            <li>Taux de service fournisseur</li>
+                            <li>Économies réalisées</li>
+                            <li>Nombre de fournisseurs actifs</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Entités</h6>
+                        <ul>
+                            <li>Fournisseur</li>
+                            <li>Bon de commande</li>
+                            <li>Réception</li>
+                            <li>Contrat</li>
+                            <li>Article</li>
+                            <li>Demande d'achat</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Règles clés</h6>
+                        <ul>
+                            <li>Approbation multi-niveaux selon montant</li>
+                            <li>Seuil d'engagement à ne pas dépasser</li>
+                            <li>Comparaison obligatoire pour les gros achats</li>
+                            <li>Contrôle qualité à réception</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Outils associés</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">ERPNext</span>
+                            <span class="badge bg-secondary me-2 mb-2">Odoo Achat</span>
+                            <span class="badge bg-secondary me-2 mb-2">Openbravo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SI & Sécurité Modal -->
+<div class="modal fade" id="siModal" tabindex="-1" aria-labelledby="siModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title" id="siModalLabel"><i class="fas fa-shield-alt me-2"></i> Systèmes d'Information & Sécurité</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Objectifs</h6>
+                        <ul>
+                            <li>Maintenir l'intégrité du SI</li>
+                            <li>Garantir la disponibilité</li>
+                            <li>Assurer la sécurité des données</li>
+                            <li>Conformité réglementaire</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Processus clés</h6>
+                        <ul>
+                            <li>Gestion des accès</li>
+                            <li>Traitement des incidents</li>
+                            <li>Audit de sécurité</li>
+                            <li>Mise à jour de la PSSI</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">KPIs</h6>
+                        <ul>
+                            <li>Temps de résolution des incidents</li>
+                            <li>Nombre de vulnérabilités critiques</li>
+                            <li>Taux de conformité</li>
+                            <li>Disponibilité des systèmes</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Entités</h6>
+                        <ul>
+                            <li>Utilisateur</li>
+                            <li>Profil</li>
+                            <li>Session</li>
+                            <li>Incident</li>
+                            <li>Application</li>
+                            <li>Serveur</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Normes & Règles</h6>
+                        <ul>
+                            <li>ISO 27001</li>
+                            <li>RGPD</li>
+                            <li>OWASP Top 10</li>
+                            <li>Politique de mot de passe</li>
+                            <li>Chiffrement des données sensibles</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Outils associés</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">Keycloak (IAM)</span>
+                            <span class="badge bg-secondary me-2 mb-2">WSO2 API Manager</span>
+                            <span class="badge bg-secondary me-2 mb-2">Graylog (logs)</span>
+                            <span class="badge bg-secondary me-2 mb-2">Vault (secrets)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Juridique & Conformité Modal -->
+<div class="modal fade" id="juridiqueModal" tabindex="-1" aria-labelledby="juridiqueModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-secondary text-white">
+                <h5 class="modal-title" id="juridiqueModalLabel"><i class="fas fa-gavel me-2"></i> Juridique & Conformité</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Objectifs</h6>
+                        <ul>
+                            <li>Gérer les obligations réglementaires</li>
+                            <li>Rédiger et suivre les contrats</li>
+                            <li>Protéger les actifs intellectuels</li>
+                            <li>Minimiser les risques juridiques</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Processus clés</h6>
+                        <ul>
+                            <li>Rédaction contractuelle</li>
+                            <li>Approbation juridique</li>
+                            <li>Archivage documentaire</li>
+                            <li>Renouvellement des engagements</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">KPIs</h6>
+                        <ul>
+                            <li>Nombre de contrats en cours</li>
+                            <li>Taux de conformité réglementaire</li>
+                            <li>Délai de traitement des demandes</li>
+                            <li>Nombre de litiges</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Entités</h6>
+                        <ul>
+                            <li>Contrat</li>
+                            <li>Clause</li>
+                            <li>Partie</li>
+                            <li>Échéance</li>
+                            <li>Réglementation</li>
+                            <li>Document</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Règles clés</h6>
+                        <ul>
+                            <li>Validation juridique obligatoire</li>
+                            <li>Archivage sécurisé des contrats</li>
+                            <li>Revue annuelle des engagements</li>
+                            <li>Clauses types prédéfinies</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Outils associés</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">ContractZen</span>
+                            <span class="badge bg-secondary me-2 mb-2">Odoo Légal</span>
+                            <span class="badge bg-secondary me-2 mb-2">DocuSign</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Gouvernance & Direction Modal -->
+<div class="modal fade" id="directionModal" tabindex="-1" aria-labelledby="directionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-orange text-white">
+                <style>.bg-orange {background-color: #d35400 !important;}</style>
+                <h5 class="modal-title" id="directionModalLabel"><i class="fas fa-chart-line me-2"></i> Gouvernance & Direction</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Objectifs</h6>
+                        <ul>
+                            <li>Piloter la performance globale</li>
+                            <li>Définir la stratégie</li>
+                            <li>Allouer les ressources</li>
+                            <li>Garantir la pérennité</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Processus clés</h6>
+                        <ul>
+                            <li>Élaboration du budget</li>
+                            <li>Définition des indicateurs</li>
+                            <li>Suivi des projets stratégiques</li>
+                            <li>Reporting aux actionnaires</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">KPIs</h6>
+                        <ul>
+                            <li>ROI (Return on Investment)</li>
+                            <li>EBITDA</li>
+                            <li>Taux de croissance</li>
+                            <li>Part de marché</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Entités</h6>
+                        <ul>
+                            <li>Budget</li>
+                            <li>Indicateur</li>
+                            <li>Projet stratégique</li>
+                            <li>Décision</li>
+                            <li>Comité</li>
+                            <li>Rapport</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Règles clés</h6>
+                        <ul>
+                            <li>Revue trimestrielle obligatoire</li>
+                            <li>Seuil d'alerte sur les indicateurs</li>
+                            <li>Validation du budget annuel</li>
+                            <li>Communication transparente</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Outils associés</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">PowerBI</span>
+                            <span class="badge bg-secondary me-2 mb-2">Metabase</span>
+                            <span class="badge bg-secondary me-2 mb-2">Tableau</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Innovation & Digital Modal -->
+<div class="modal fade" id="innovationModal" tabindex="-1" aria-labelledby="innovationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-green text-white">
+                <style>.bg-green {background-color: #27ae60 !important;}</style>
+                <h5 class="modal-title" id="innovationModalLabel"><i class="fas fa-lightbulb me-2"></i> Innovation & Digital</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Objectifs</h6>
+                        <ul>
+                            <li>Initier des innovations technologiques</li>
+                            <li>Piloter la transformation digitale</li>
+                            <li>Optimiser les processus avec la tech</li>
+                            <li>Anticiper les disruptions</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Processus clés</h6>
+                        <ul>
+                            <li>Veille technologique</li>
+                            <li>Proof of Concept (POC)</li>
+                            <li>Déploiement de solutions</li>
+                            <li>Mesure de la valeur</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">KPIs</h6>
+                        <ul>
+                            <li>Nombre d'innovations déployées</li>
+                            <li>ROI des projets digitaux</li>
+                            <li>Taux d'adoption</li>
+                            <li>Gains d'efficacité</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Technologies</h6>
+                        <ul>
+                            <li>IA / Machine Learning</li>
+                            <li>IoT (Internet of Things)</li>
+                            <li>DevOps & CI/CD</li>
+                            <li>Cloud Computing</li>
+                            <li>Blockchain</li>
+                            <li>RPA (Robotic Process Automation)</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Règles clés</h6>
+                        <ul>
+                            <li>Évaluation avant investissement</li>
+                            <li>Phase de test obligatoire</li>
+                            <li>Mesure d'impact post-déploiement</li>
+                            <li>Formation des utilisateurs</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Outils associés</h6>
+                        <div class="d-flex flex-wrap">
+                            <span class="badge bg-secondary me-2 mb-2">Python</span>
+                            <span class="badge bg-secondary me-2 mb-2">Node.js</span>
+                            <span class="badge bg-secondary me-2 mb-2">Docker</span>
+                            <span class="badge bg-secondary me-2 mb-2">GitLab CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
     
     <!-- All Domains Modal -->
     <div class="modal fade" id="allDomainsModal" tabindex="-1" aria-labelledby="allDomainsModalLabel" aria-hidden="true">
@@ -1180,6 +2076,21 @@
                                     <td>Veille, POC, Déploiement, Mesure de la valeur</td>
                                     <td>Python, Node.js, Docker, GitLab CI/CD</td>
                                 </tr>
+								
+							<!-- Nouveaux domaines ajoutés -->
+                            <tr>
+                                <td><strong>Qualité & Excellence Opérationnelle</strong></td>
+                                <td>Garantir la conformité aux normes, améliorer les processus</td>
+                                <td>Gestion des NC, Audits qualité, Amélioration continue, Certifications</td>
+                                <td>QualiSoft, Kaizen, LeanIX, ISO Track</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Recherche & Développement</strong></td>
+                                <td>Innover, développer nouveaux produits, protéger la propriété intellectuelle</td>
+                                <td>Veille techno, Développement prototypes, Tests, Gestion brevets</td>
+                                <td>JIRA R&D, SolidWorks, LabView, PatentSight</td>
+                            </tr>
+								
                             </tbody>
                         </table>
                     </div>
